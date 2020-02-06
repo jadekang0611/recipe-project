@@ -7,7 +7,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'hbs');
 
-// app.use('/recipes', recipesController);
+app.use('/recipes', recipesController);
 
 app.listen(4000, () => {
     console.log('we\'re listening on port 4000');
