@@ -3,13 +3,20 @@ const Recipe = require('../db/recipeSchema');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    Recipe.find({})
+  Recipe.find({})
     .then(recipes => {
-        console.log(recipes)
-        res.render('index', { recipes })
+      console.log(recipes);
+      res.render('index', { recipes });
     })
     .catch(console.error);
 });
 
+router.get('/:id', (req, res) => {
+  Recipe.findById(req.params.id)
+    .then(recipe => {
+      res.render('show', recipe);
+    })
+    .catch(console.error);
+});
 
 module.exports = router;

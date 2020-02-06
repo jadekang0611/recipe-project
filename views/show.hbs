@@ -1,13 +1,7 @@
-<h1>Yummy Asian Cuisine Recipes</h1>
-
-    {{#each recipes}}
-
-    <h2><a href='recipes/{{this._id}}'>{{this.title}}</a></h2>
-
-    {{!-- <img src=`https://localhost/{{this.image}}` /> --}}
+    <h2>{{title}}</h2>
 
     <h3>Description:</h3>
-    <p>{{this.description}}</p>
+    <p>{{description}}</p>
 
     <h3>Ingredients:</h3>
     <ul>
@@ -23,4 +17,4 @@
         {{/each}}
     </ul>
 
-    {{/each}}
+    
