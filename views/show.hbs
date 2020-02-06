@@ -18,4 +18,6 @@
         {{/each}}
     </ul>
 
-    
+    <form action="/recipes/{{_id}}?_method=delete" method="post">
+        <input type="submit" value="Remove" />
+    </form>

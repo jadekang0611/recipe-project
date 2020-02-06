@@ -43,6 +43,12 @@ router.put('/:id', (req, res) => {
   });
 });
 
+router.delete('/:id', (req, res) => {
+    Recipe.findOneAndRemove({_id: req.params.id}).then(() => {
+        res.redirect('/recipes');
+    });
+});
+
 router.post('/', (req, res) => {
   Recipe.create(req.body)
     .then(recipe => {
