@@ -11,10 +11,22 @@ router.get('/', (req, res) => {
     .catch(console.error);
 });
 
+router.get('/new', (req, res) => {
+    res.render('new');
+});
+
 router.get('/:id', (req, res) => {
   Recipe.findById(req.params.id)
     .then(recipe => {
       res.render('show', recipe);
+    })
+    .catch(console.error);
+});
+
+router.post('/', (req, res) => {
+    Recipe.create(req.body)
+    .then(recipe => {
+        res.redirect('/recipes');
     })
     .catch(console.error);
 });
