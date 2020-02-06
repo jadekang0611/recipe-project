@@ -11,6 +11,6 @@ app.set('view engine', 'hbs');
 app.use(methodOverride('_method'));
 app.use('/recipes', recipesController);
 
-app.listen(4000, () => {
+app.listen(process.env.PORT || 4000, () => {
   console.log("we're listening on port 4000");
 });
